@@ -4,15 +4,21 @@ import { Canvas } from '@react-three/fiber'
 
 interface AppProps {}
 
+function Dot() {
+  return (
+    <mesh position={[0,0,0]}>
+      <circleGeometry args={[0.1, 100]} />
+      <meshBasicMaterial color="#ff1050" />
+    </mesh>
+  )
+}
+
 function App({}: AppProps) {
   return (
     <div className="app">
-      <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
+      <Canvas orthographic camera={{ zoom: 100 }}>
         <mesh>
-          <boxGeometry />
-          <meshStandardMaterial />
+          <Dot />
         </mesh>
       </Canvas>
     </div>
