@@ -33,4 +33,7 @@ export default {
   buildOptions: {
     /* ... */
   },
+  knownEntrypoints: [
+    'seedrandom'
+  ],
 };
