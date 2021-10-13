@@ -3,12 +3,16 @@ import './App.css';
 import Webcam from "react-webcam";
 import { Canvas } from '@react-three/fiber';
 
-// https://github.com/tensorflow/tfjs-models/blob/master/handpose/demo/index.js
 import * as handpose from '@tensorflow-models/handpose';
 import * as tf from '@tensorflow/tfjs-core';
 import '@tensorflow/tfjs-backend-webgl';
 import useMeasure from 'react-use-measure';
 import { Line } from '@react-three/drei';
+
+function applyOffset(point: [number, number, number], offset: { x: number; y: number; }) {
+  const [x, y, z] = point
+  return [x - offset.x, (y - offset.y) * -1, z];
+}
 
 interface AppProps {}
 
@@ -122,14 +126,29 @@ function Camera({ pushPoints }: {pushPoints: any}) {
           width={1280}
         />
       }
-
     </div>
   );
 }
 
-function applyOffset(point: [number, number, number], offset: {x:number; y: number;}) {
-  const [x, y, z] = point
-  return [x - offset.x, (y- offset.y) * -1, z];
+function HandEmoji() {
+  const hands = ['🤚', '🖐️', '🖖', '✌️', '🤞', '🤟', '👈', '👉', '👆', '☝️', '👍', '✊', '🤛', '🤜', '👋']
+  const randomItem = (list: string[]) => list[~~(list.length * Math.random())]
+
+  const [hand, setHand] = useState<string>(randomItem(hands));
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHand(randomItem(hands));
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+  return (
+    <div className="hand-emoji">
+      {hand}
+    </div>
+  );
 }
 
 function App({}: AppProps) {
@@ -182,6 +201,7 @@ function App({}: AppProps) {
           }
         </mesh>
       </Canvas>
+      <HandEmoji />
     </div>
   );
 }
