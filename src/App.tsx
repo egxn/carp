@@ -38,7 +38,7 @@ function App({}: AppProps) {
   useEffect(() =>  {
     if (bounds) {
       const {height, width} = bounds;
-      setOffset({ x: height / 4, y: (width / 4) + 200 });
+      setOffset({ x: height / 4, y: (width / 4) });
     }
   }, [bounds]);
 
@@ -53,7 +53,7 @@ function App({}: AppProps) {
                 <Dot
                   key={i}
                   x={(p[0] - offset.x)}
-                  y={(p[1] - offset.y) * -1}
+                  y={(p[1] - (offset.y)) * -1}
                   z={p[2]}
                 />
               )

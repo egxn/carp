@@ -13,3 +13,7 @@ Mini game using to do active pauses and avoid 🙅🏻‍♀️🎏🤚 carpal t
 
 ### npm install
 ### npm start
+
+## Screenshots 🤟
+
+<img src="demo/carp.png" alt="demo-img" />
