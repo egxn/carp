@@ -1,9 +1,15 @@
-# Template React Three TensorFlow TypeScript Snowpack
+# 🎏 Carp 
 
+Mini game using to do active pauses and avoid 🙅🏻‍♀️🎏🤚 carpal tunnel 
+
+## Build with
+
+* 🧡 TF 
+* 🌱 ThreeJS 
+* ⚛️ React
+* 🫀 
+
+## Steps
+
+### npm install
 ### npm start
-
-### npm run build
-
-### npm test
-
-### npm test -- --watch
