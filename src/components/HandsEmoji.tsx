@@ -8,7 +8,7 @@ function HandEmoji() {
   useEffect(() => {
     const interval = setInterval(() => {
       setHand(randomItem(hands));
-    }, 3500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

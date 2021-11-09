@@ -43,7 +43,7 @@ function Camera({ pushPoints }: { pushPoints: any }) {
       if (model && webcamRef) {
         detect();
       }
-    }, 10);
+    }, 0);
 
     return () => clearInterval(interval);
   }, [model]);

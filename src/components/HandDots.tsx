@@ -25,3 +25,5 @@ function HandDots({ offset, points }: HandDotsProps) {
     </mesh>
   );
 }
+
+export default HandDots;
