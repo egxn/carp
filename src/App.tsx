@@ -24,7 +24,7 @@ function App() {
 
   const pushPoints = (points: PointType[], lines: any ) => {
     setPoints(points);
-    setLines(Lines);
+    setLines(lines);
   }
 
   useEffect(() => {
